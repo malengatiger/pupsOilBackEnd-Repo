@@ -85,9 +85,9 @@ public class RetailerEndPoint {
     public void onClose(Session session
     ) {
         log.log(Level.WARNING, "onClose - remove session: {0}", session.getId());
-        for (Session mGGolfSession : peers) {
-            if (session.getId().equalsIgnoreCase(mGGolfSession.getId())) {
-                peers.remove(mGGolfSession);
+        for (Session mSession : peers) {
+            if (session.getId().equalsIgnoreCase(mSession.getId())) {
+                peers.remove(mSession);
                 break;
             }
         }

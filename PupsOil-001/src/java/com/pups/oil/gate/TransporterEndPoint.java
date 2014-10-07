@@ -85,9 +85,9 @@ public class TransporterEndPoint {
     public void onClose(Session session
     ) {
         log.log(Level.WARNING, "onClose - remove session: {0}", session.getId());
-        for (Session mGGolfSession : peers) {
-            if (session.getId().equalsIgnoreCase(mGGolfSession.getId())) {
-                peers.remove(mGGolfSession);
+        for (Session m : peers) {
+            if (session.getId().equalsIgnoreCase(m.getId())) {
+                peers.remove(m);
                 break;
             }
         }
